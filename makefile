@@ -7,7 +7,7 @@ sharedir=$(prefix)/share
 all: game
 
 game: Block.o GameObject.o Gold.o Graphics.o Image.o Input.o Level.o main.o Platform.o RigidBody.o Ship.o Time.o
-	g++ -g -o spacepirates Block.o GameObject.o Gold.o Graphics.o Image.o Input.o Level.o main.o Platform.o RigidBody.o Ship.o Time.o -lGL -lSDL -lSDL_image -lSDL_ttf
+	g++ -g -o spacepirates Block.o GameObject.o Gold.o Graphics.o Image.o Input.o Level.o main.o Platform.o RigidBody.o Ship.o Time.o -lGL -lSDL -lSDL2 -lSDL_image -lSDL_ttf
 gameWithLibs: Block.o GameObject.o Gold.o Graphics.o Image.o Input.o Level.o main.o Platform.o RigidBody.o Ship.o Time.o
 	g++ -g -o gameWithLibs Block.o GameObject.o Gold.o Graphics.o Image.o Input.o Level.o main.o Platform.o RigidBody.o Ship.o Time.o -lGL -Wl,-rpath,'$ORIGIN/lib' -Llib -l:libSDL-1.2.so.0 -l:libSDL_image-1.2.so.0 -l:libSDL_ttf-2.0.so.0
 

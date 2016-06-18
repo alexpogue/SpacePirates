@@ -14,6 +14,19 @@
   Then, to run:<br />
   ./bin/SpacePirates
 
+####Docker on Mac:
+  Prerequisites: brew installed
+  `brew install socat`
+  Install XQuarts from http://xquartz.macosforge.org/landing/
+  Start socat:
+  `socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"`
+  Start XQuartz
+  cd into cloned repo
+  `docker build -t spacepirates .`
+  `docker run --rm -e DISPLAY=<local_ip>:0 -it spacepirates /SpacePirates/build/bin/SpacePirates`
+  Where <local_ip> is your LAN IP, probably starting with 192.168 ...
+  Otherwise, replacing the whole -e param value with `$DISPLAY` may also work
+
 ####Debian package:
   Ensure files in debian directory are correct (esp. control, spacepirates.dirs)
 
